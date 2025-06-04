@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro da Bicicleta</title>
+  <link rel="stylesheet" href="style.novo.css"/>
+</head>
+<body>
+  <nav class="navegacao" aria-label="Menu principal">
+    <ul class="menu">
+      <li><a href="index.html" class="menu-link">Início</a></li>
+    </ul>
+  </nav>
+
+  <section class="cadastro">
+    <h2 class="cadastro-titulo">Cadastro da Bicicleta</h2>
+    <form id="formCadastro" class="formulario-contato">
+      <input type="text" class="campo-form" placeholder="Nome completo" required />
+      <input type="text" class="campo-form" placeholder="RA" required />
+      <input type="text" class="campo-form" placeholder="Modelo da bicicleta" required />
+      <button type="submit" class="botao-form">Avançar</button>
+    </form>
+  </section>
+
+  <section id="registro-gerado" class="resultado" style="display: none;">
+    <h2 class="beneficios-titulo">Registro Gerado</h2>
+    <p class="beneficios-paragrafo" id="codigo-gerado"></p>
+  </section>
+
+  <script>
+    document.getElementById("formCadastro").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const codigo = Math.floor(Math.random() * 1000000);
+      const data = new Date().toLocaleString();
+
+      document.getElementById("codigo-gerado").innerText = `Código gerado: ${codigo} | Guardada em: ${data}`;
+      document.getElementById("registro-gerado").style.display = "block";
+    });
+  </script>
+</body>
+</html>

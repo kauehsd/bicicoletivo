@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BiciColetivo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-elements"></div>
+  
+  <header>
+    <div class="logo">
+       BiciColetivo
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Como Funciona</a></li>
+        <li><a href="#">Benefícios</a></li>
+        <li><a href="#">Registros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Gerencie sua bike com<br><span>segurança e praticidade</span></h1>
+      <div class="cards">
+        <div class="card">
+          <h3>Sobre</h3>
+          <p>Sistema de registro com código automático.</p>
+        </div>
+        <div class="card">
+          <h3>Como Funciona</h3>
+          <p>Geração automática de código, data e hora.</p>
+        </div>
+        <div class="card">
+          <h3>Benefícios</h3>
+          <p>Facilite e recupere sua bike com segurança.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="formulario">
+      <h2>Cadastro de Bicicleta</h2>
+      <form id="bikeForm">
+        <input type="text" placeholder="Nome" id="nome" required />
+        <input type="text" placeholder="RA" id="ra" required />
+        <input type="text" placeholder="Modelo" id="modelo" required />
+        <button type="submit">Registrar Bicicleta</button>
+      </form>
+    </section>
+
+    <section id="historico" class="historico" style="display: none;">
+      <h2>Histórico de Bicicletas</h2>
+      <div id="registros"></div>
+    </section>
+
+    <section class="retirada">
+      <h2>Retirar Bicicleta</h2>
+      <input type="text" id="raRetirada" placeholder="RA" />
+      <input type="text" id="codigoRetirada" placeholder="Código de Segurança" />
+      <button onclick="retirarBike()">Registrar</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

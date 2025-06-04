@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retirada da Bicicleta</title>
+  <link rel="stylesheet" href="style.novo.css"/>
+</head>
+<body>
+  <nav class="navegacao" aria-label="Menu principal">
+    <ul class="menu">
+      <li><a href="index.html" class="menu-link">Início</a></li>
+    </ul>
+  </nav>
+
+  <section class="cadastro">
+    <h2 class="cadastro-titulo">Retirar Bicicleta</h2>
+    <form id="formRetirada" class="formulario-contato">
+      <input type="text" class="campo-form" placeholder="Digite o código" required />
+      <button type="submit" class="botao-form">Retirar</button>
+    </form>
+  </section>
+
+  <section id="retirada-confirmada" class="resultado" style="display: none;">
+    <h2 class="beneficios-titulo">Retirada Confirmada</h2>
+    <p class="beneficios-paragrafo" id="mensagem-retirada"></p>
+  </section>
+
+  <script>
+    document.getElementById("formRetirada").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const data = new Date().toLocaleString();
+      document.getElementById("mensagem-retirada").innerText = `Retirada confirmada em: ${data}`;
+      document.getElementById("retirada-confirmada").style.display = "block";
+    });
+  </script>
+</body>
+</html>
