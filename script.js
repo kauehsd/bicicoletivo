@@ -38,7 +38,7 @@ form.addEventListener("submit", async function (e) {
     localStorage.setItem("bicicletas", JSON.stringify(dados));
 
     form.reset();
-    mostrarHistorico();
+    carregarHistorico();
   } catch (error) {
     alert(error.message);
   }
